@@ -1,0 +1,112 @@
+h1, h2, h3, h4, h5, h6 {
+    font-family:'Mocky Pop One', sans-serif;
+}
+p {
+    font-family:'Raleway', sans-serif;
+}
+.purple {
+    color:#805D93;
+}
+.purple_bg {
+    background:#805D93;   
+}
+.pink {
+    color:#F49FBC;
+}
+.pink_bg {
+    background:#F49FBC;
+}
+.grey {
+    color:#2B2F23;
+}
+.grey_bg {
+    background:#2B2F23;
+}
+.green {
+    color:#9EBD6E;
+}
+.green_bg {
+    background:#9EBD6E;
+}
+.darkgreen {
+    color:#169873;
+}
+.darkgreen_bg {
+    background:#169873;
+}
+
+
+.computerButton {
+    visibility:hidden;
+}
+
+.invert {
+    filter:invert(1);
+}
+.hand-wrapper {
+    padding: 20px;
+    background: #169873;
+    border-radius: 50%;
+    height: 150px;
+    width: 150px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 5px solid white;
+}
+.hand-wrapper-green {
+    padding: 20px;
+    background: #9EBD6E;
+    border-radius: 50%;
+    height: 150px;
+    width: 150px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 5px solid white;
+}
+.hand-wrapper-orange {
+    padding: 20px;
+    background: #165a31;
+    border-radius: 50%;
+    height: 150px;
+    width: 150px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 5px solid white;
+}
+.hand-wrapper-pink {
+    padding: 20px;
+    background: #F49FBC;
+    border-radius: 50%;
+    height: 150px;
+    width: 150px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 5px solid white;
+}
+
+.cta {
+    bordeR: 0;
+    background: #bb5f00;
+    padding: 10px 15px;
+    border-radius: 5px;
+    font-size:14px;
+    text-transform:uppercase;
+    font-family:'Mocky Pop One', sans-serif;
+    font-weight:bold;
+    color:#ffff;
+    margin:0;
+}
+.cta:hover {
+    cursor:pointer;
+}
+.noShow {
+    visibility:hidden;
+}
+
+.showNow {
+    visibility:visible;
+}
