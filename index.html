@@ -1,175 +1,28 @@
 <html lang="en-US">
     <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>title</title>
-    <link rel="stylesheet" href="tachyons.css">
-    <link rel="stylesheet" href="mystyle.css">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Mochiy+Pop+One&family=Raleway:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,900;1,100;1,200;1,300;1,400;1,500;1,600&display=swap" rel="stylesheet">
-  </head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>title</title>
+        <link rel="stylesheet" href="tachyons.css">
+        <link rel="stylesheet" href="mystyle.css">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Mochiy+Pop+One&family=Raleway:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,900;1,100;1,200;1,300;1,400;1,500;1,600&display=swap" rel="stylesheet">
+    </head>
+    <body>  
+        <section class="w-100 pink_bg pv6">
+            <div class=" w-60 mr-auto ml-auto flex flex-column items-center justify-center tc">
+                <h1 class="grey">Front End Web Developer.</h1>
+                <h2 class="grey">Maria J Gallegos-Vallejo</h2>
+                <p class="grey">Hi there! My name is Maria, and I have been a Front End Developer for a few years now. I am actively trying to learn more JavaScript since currently all I really do is just create fun forms, navigations, and really simple functionality. My dream is to eventually be a Full Stack Developer, and since my job currently doesn't require me to do any crazy JavaScript, I need to develop these skills on my own.</p>
+                <p class="grey">Which is what this is! Please enjoy some fun little games, cute drawings, and well whatever I decide to do next!</p>
 
-
-  <body>  
-      <section class="w-100 pink_bg pv6">
-          <div class=" w-60 mr-auto ml-auto flex flex-column items-center justify-center tc">
-            <h1 class="grey">Front End Web Developer.</h1>
-            <h2 class="grey">Maria J Gallegos-Vallejo</h2>
-            <p class="grey">Hi there! My name is Maria, and I have been a Front End Developer for a few years now. I am actively trying to learn more JavaScript since currently all I really do is just create fun forms, navigations, and really simple functionality. My dream is to eventually be a Full Stack Developer, and since my job currently doesn't require me to do any crazy JavaScript, I need to develop these skills on my own.</p>
-            <p class="grey">Which is what this is! Please enjoy some fun little games, cute drawings, and well whatever I decide to do next!</p>
-          </div>
-      </section>
-
-      <section id="here" class="pt5 flex flex-column justify-center items-center ml-auto mr-auto tc pb6" style="background: #26262c;">
-            <h2 class="white">Rock, Paper, Scissors</h2>
-            <div class="w-100 flex flex-row-l flex-column items-start">
-                <div class="w-50-l w-100 flex flex-column items-center justify-center mt4 mb5">
-                    <div>
-                        <div class="hand-wrapper">
-                            <img class="invert" style="width:80px;" src="images/peace.png"/>
-                        </div>
-                    </div>
-                    <div class="flex mt4" style="margin-top:-100px;">
-                        <div class="hand-wrapper-green mh4">
-                            <img class="invert" style="width:80px;" src="images/hand.png" />
-                        </div>
-                        <div class="hand-wrapper-orange mh4">
-                            <img class="invert" style="width:80px;" src="images/motivation.png" />
-                        </div>
-                    </div>
-                </div>
-    
-                <div class="flex flex-column w-50-l w-100 items-center justify-center">
-                    <div class="flex flex-row-l flex-column">
-                        <div class="w-50-l w-100 ph4 flex flex-column">
-                            <button class="cta mb5" onclick="generateRandom();">GO!</button>
-                            <!--Start of Random Choice the User Gets-->
-                            <div class="hand-wrapper-pink mh4 noShow mt4" id="wrapperofImage">
-                                <img class="invert" style="width:80px;" id="userchoice2" src="" />
-                            </div>
-                           
-                            <p id="writtenChoicewrapper" class="noShow white" style="visibility:hidden;">Congrats! You got <span id="writtenChoice"></span>!</p>
-                       
-                            <!--End of Random Choice User Gets-->
-                        </div>
-                        <div class="w-50-l w-100 ph4 flex flex-column">
-                            <button class="computerButton mb5 mt5 cta" id="computerButton" onclick="generateComputerChoice();">Computer's Turn!</button>
-                            <!--Start of Random Choice the Computer Gets-->
-                            <div class="hand-wrapper-pink mh4 noShow mt4" id="wrapperofComputerImage">
-                                <img class="invert" style="width:80px;" id="computerchoice2" src="" />
-                            </div>
-                        </div>
-                    </div>
-                    <p id="writtenChoicewrapper2" class="white"></p>
-                    <!--End of Random Choice Computer Gets-->
-                    <button class="mb5 mt5 cta white" id="" onclick="updateDiv();">reset!</button>
-                </div>
-
+                <a href="games/index.html">Please head on over to the <span>arcade</span> where I will be coding some games!</a>
             </div>
-           
+        </section>
+    </body>
+    <footer class="mv6 darkgreen_bg">
+        
 
-            
-      </section>
-
-
-      
-      
-  
-  </body>
-    <footer class="mv6">
-        <script>
-            let userchoice2 = '';
-            let random = Math.floor(Math.random() * 3);
-            let computerButton = document.getElementById('computerButton');
-            let userChoiceWrapper = document.getElementById('wrapperofImage');
-            let writtenchoice = document.getElementById('writtenChoicewrapper');
-            function generateRandom() {
-                if(random === 0) {
-                    userchoice2 = 'paper';
-                    document.getElementById('userchoice2').src = 'images/hand.png';
-                    document.getElementById('writtenChoice').innerHTML = 'paper';
-                    userChoiceWrapper.classList.remove('noShow');
-                    writtenchoice.classList.remove('noShow');
-                    computerButton.classList.add('showNow');
-                } else if(random === 1) {
-                    userchoice2 = 'rock';
-                    document.getElementById('userchoice2').src = 'images/motivation.png';
-                    document.getElementById('writtenChoice').innerHTML = 'rock';
-                    userChoiceWrapper.classList.remove('noShow');
-                    writtenchoice.classList.remove('noShow');
-                    computerButton.classList.add('showNow');
-                } else if(random === 2) {
-                    userchoice2 = 'scissors';
-                    document.getElementById('userchoice2').src = 'images/peace.png';
-                    document.getElementById('writtenChoice').innerHTML = 'scissors';
-                    userChoiceWrapper.classList.remove('noShow');
-                    writtenchoice.classList.remove('noShow');
-                    computerButton.classList.add('showNow');
-                } else {
-                    userchoice2 = 'sorry something is broken...';
-                    document.getElementById('userchoice2').innerHTML = 'sorry something is borken...';
-                }
-            };
-            let computerChoice = '';
-            let computerNumber = Math.floor(Math.random() * 3);
-            let computerChoiceWrapper = document.getElementById('wrapperofComputerImage');
-            function generateComputerChoice() {
-                if(computerNumber === 0) {
-                    computerChoice = 'paper';
-                    document.getElementById('computerchoice2').src = 'images/hand.png';
-                    computerChoiceWrapper.classList.remove('noShow');
-                    checkWinner(userchoice2, computerChoice);
-                } else if(computerNumber === 1) {
-                    computerChoice = 'rock';
-                    document.getElementById('computerchoice2').src = 'images/motivation.png';
-                    computerChoiceWrapper.classList.remove('noShow');
-                    checkWinner(userchoice2, computerChoice);
-                } else if(computerNumber === 2) {
-                    computerChoice = 'scissors';
-                    document.getElementById('computerchoice2').src = 'images/peace.png';
-                    computerChoiceWrapper.classList.remove('noShow');
-                    checkWinner(userchoice2, computerChoice);
-                } else {
-                    document.getElementById('computerchoice2').innerHTML = 'sorry something is borken...';
-                };
-                console.log('User got: ' +  userchoice2 + ' And computer got: ' + computerChoice);
-            };
-
-            
-
-          function checkWinner(userchoice2, computerChoice) {
-            if(userchoice2 === 'paper' && computerChoice === 'paper') {
-                document.getElementById('writtenChoicewrapper2').innerHTML = 'eh, you tied!';
-              } else if (userchoice2 === 'paper' && computerChoice === 'rock') {
-                document.getElementById('writtenChoicewrapper2').innerHTML = 'congrats, you win!';
-              }  else if (userchoice2 === 'paper' && computerChoice === 'scissors') {
-                document.getElementById('writtenChoicewrapper2').innerHTML = 'sucks, you lose!';
-              } else if (userchoice2 === 'scissors' && computerChoice === 'rock') {
-                document.getElementById('writtenChoicewrapper2').innerHTML = 'sucks, you lose!';
-              } else if (userchoice2 === 'scissors' && computerChoice === 'paper') {
-               document.getElementById('writtenChoicewrapper2').innerHTML = 'congrats, you win!';
-              } else if (userchoice2 === 'scissors' && computerChoice === 'scissors') {
-               document.getElementById('writtenChoicewrapper2').innerHTML = 'eh, you tied!';
-              }  else if (userchoice2 === 'rock' && computerChoice === 'rock') {
-               document.getElementById('writtenChoicewrapper2').innerHTML = 'eh, you tied!';
-              } else if (userchoice2 === 'rock' && computerChoice === 'paper') {
-               document.getElementById('writtenChoicewrapper2').innerHTML = 'sucks, you lose!';
-              } else if (userchoice2 === 'rock' && computerChoice === 'scissors') {
-               document.getElementById('writtenChoicewrapper2').innerHTML = 'congrats, you win';
-              } else {
-                  alert('not sure what, but somethings broken!');
-              };
-          }
-
-
-            function updateDiv() { 
-              
-                    window.location.reload();
-                }
-
-          
-
-      </script>
-  </footer>
+    </footer>
 </html>

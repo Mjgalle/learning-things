@@ -4,7 +4,17 @@ body {
 h1, h2, h3, h4, h5, h6 {
     font-family:'Mocky Pop One', sans-serif;
 }
-p {
+a {
+    text-decoration:none;
+    color:#2B2F23;
+}
+span {
+    font-weight:bold;
+}
+span:hover {
+    cursor:pointer;
+}
+p, a, li, ul {
     font-family:'Raleway', sans-serif;
 }
 .purple {

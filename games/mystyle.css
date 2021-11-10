@@ -4,8 +4,12 @@ body {
 h1, h2, h3, h4, h5, h6 {
     font-family:'Mocky Pop One', sans-serif;
 }
-p {
+p, ul, li, em, span, a {
     font-family:'Raleway', sans-serif;
+}
+a {
+    color:inherit;
+    font-weight:Bold;
 }
 .purple {
     color:#805D93;
@@ -48,7 +52,6 @@ p {
 }
 .hand-wrapper {
     padding: 20px;
-    background: #169873;
     border-radius: 50%;
     height: 150px;
     width: 150px;
@@ -57,31 +60,17 @@ p {
     align-items: center;
     border: 5px solid white;
 }
-.hand-wrapper-green {
-    padding: 20px;
+.hand-wrapper:nth-child(1) {
     background: #9EBD6E;
-    border-radius: 50%;
-    height: 150px;
-    width: 150px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    border: 5px solid white;
 }
-.hand-wrapper-orange {
-    padding: 20px;
+.hand-wrapper:nth-child(2) {
     background: #165a31;
-    border-radius: 50%;
-    height: 150px;
-    width: 150px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    border: 5px solid white;
 }
-.hand-wrapper-pink {
+.hand-wrapper:nth-child(3) {
+    background: #169873;
+}
+.hand-wrapper-user-select {
     padding: 20px;
-    background: #F49FBC;
     border-radius: 50%;
     height: 150px;
     width: 150px;
@@ -89,6 +78,18 @@ p {
     justify-content: center;
     align-items: center;
     border: 5px solid white;
+    background:#805D93; 
+}
+.hand-wrapper-computer-select {
+    padding: 20px;
+    border-radius: 50%;
+    height: 150px;
+    width: 150px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 5px solid white;
+    background:#F49FBC;
 }
 
 .cta {
@@ -124,4 +125,28 @@ p {
 }
 .button-for-choice:nth-child(odd) {
     z-index:1;
+}
+.no-show {
+    display:none;
+}
+
+@keyframes spin3D {
+    25% {
+      transform: rotate3d(3,3,3, 360deg);
+    }
+    50% {
+      transform: rotate3d(0deg);
+    }
+  }
+
+.spin-3d {
+    -webkit-animation: spin3D 2s linear 0s 1;
+}
+
+.separator-line {
+    margin: 0 20px;
+    height: 150px;
+    width: 3px;
+    background: white;
+    border-radius: 10px;
 }

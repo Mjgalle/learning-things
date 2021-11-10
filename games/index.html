@@ -8,15 +8,16 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Mochiy+Pop+One&family=Raleway:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,900;1,100;1,200;1,300;1,400;1,500;1,600&display=swap" rel="stylesheet">
+    <title>Arcade | JavaScript Games</title>
   </head>
 
 
   <body>  
-      <section class="w-100 pink_bg pv6">
+      <section class="w-100 green_bg pv6">
           <div class=" w-60 mr-auto ml-auto flex flex-column items-center justify-center tc">
             <h2 class="grey testingThis">You made it to the arcade!</h2>
             <p class="grey testingThis">Congrats on making it here! Since I need to work on my JS skills, why not code out some games we're all familiar with!</p>
-            <p class="grey">Please pick a game you'd like to play!</p>
+            <p class="grey">Please pick a game you'd like to play:</p>
             <div>
                 <a href="#rockpaperscissors">Rock Paper Scissors</a>
             </div>
@@ -25,167 +26,159 @@
 
       <section id="rockpaperscissors" class="pt5 flex flex-column justify-center items-center ml-auto mr-auto tc pb6" style="background: #26262c;">
             <h2 class="white">Rock, Paper, Scissors</h2>
-            <h3 class="white">Rules:</h3>
+            <h3 class="white mb0 pb0">Rules:</h3>
             <ul class="tl white">
                 <li>Rock beats Scissors</li>
                 <li>Scissors beats Paper</li>
                 <li>Paper beats Rock</li>
             </ul>
-            <p class="white">These image tokens, are your turn! Pick which ever you want to be for this round!</p>
+            <p class="white ph4">Click on an image, but choose wisely!</p>
             <div class="w-100 flex flex-column items-center justify-center">
 
                 <!--Start of Pick for the User-->
-                <div class="w-50-l w-100 flex flex-column items-center justify-center mt6 mb5">
+                <div class="w-50-l w-100 flex items-center justify-center mt6 mb5">
                     <div class="flex mt4">
-                        <button onclick="lockinChoice('paper');" class="hand-wrapper-green button-for-choice">
-                            <img class="invert" style="width:80px;" alt="paper" src="images/hand.png" />
+                        <button onclick="lockinChoice('paper');" class="hand-wrapper button-for-choice">
+                            <img class="invert" style="width:80px;" alt="paper" src="images/paper.png" />
                         </button>
                         <button onclick="lockinChoice('scissors');" class="hand-wrapper  button-for-choice">
-                            <img class="invert" style="width:80px;" alt="scissors." src="images/peace.png"/>
+                            <img class="invert" style="width:80px;" alt="scissors." src="images/scissors.png"/>
                         </button>
-                        <button onclick="lockinChoice('rock');" class="hand-wrapper-orange button-for-choice">
-                            <img class="invert" style="width:80px;"  alt="rock" src="images/motivation.png" />
+                        <button onclick="lockinChoice('rock');" class="hand-wrapper button-for-choice">
+                            <img class="invert" style="width:80px;"  alt="rock" src="images/rock.png" />
                         </button>
                     </div>
+                    <!--Here the token user picked will display -->
+                    <div id="choice-user-picked" class="no-show class-to-remove">
+                        <p class="white">You picked <span id="written-pick"></span>!</p>
+                        <div class="hand-wrapper-user-select spin-3d">
+                            <img id="pick" class="invert" style="width:80px;" alt="" src="" />
+                        </div>
+                    </div>
+                    <!--End of toekn user picked to display-->
+
+                    <div class="separator-line no-show class-to-remove-computer"></div>
+
+                    <!--Start of Token Computer Chose-->
+                    <div id="wrapperofComputerImage" class="no-show flex flex-column">
+                        <p class="white">Computer got <span id="written-pick-computer"></span>!</p>
+                        <div class="hand-wrapper-computer-select">
+                            <img class="invert" style="width:80px;" id="computerchoice2" src="" />
+                        </div>
+                    </div>
+                    <!--End of Token Computer Chose-->
                 </div>
                 <!--End of Pick for the User-->
     
+                <!--Button for Computer Turn-->
                 <div class="flex flex-column w-50-l w-100 items-center justify-center">
                     <div class="flex flex-row-l flex-column">
-                        <div class="w-50-l w-100 ph4 flex flex-column">
-                            <button class="cta mb5" onclick="generateRandom();">GO!</button>
-                            <!--Start of Random Choice the User Gets-->
-                            <div class="hand-wrapper-pink mh4 noShow mt4" id="wrapperofImage">
-                                <img class="invert" style="width:80px;" id="userchoice2" src="" />
-                            </div>
-                           
-                            <p id="writtenChoicewrapper" class="noShow white" style="visibility:hidden;">Congrats! You got <span id="writtenChoice"></span>!</p>
-                       
-                            <!--End of Random Choice User Gets-->
-                        </div>
-                        <div class="w-50-l w-100 ph4 flex flex-column">
-                            <button class="computerButton mb5 mt5 cta" id="computerButton" onclick="generateComputerChoice();">Computer's Turn!</button>
-                            <!--Start of Random Choice the Computer Gets-->
-                            <div class="hand-wrapper-pink mh4 noShow mt4" id="wrapperofComputerImage">
-                                <img class="invert" style="width:80px;" id="computerchoice2" src="" />
-                            </div>
+                        <div class="ph4 flex flex-column">
+                            <button class="class-to-remove no-show mb5 mt5 cta" id="computerButton" onclick="generateComputerChoice();">Computer's Turn!</button>
                         </div>
                     </div>
-                    <p id="writtenChoicewrapper2" class="white"></p>
-                    <!--End of Random Choice Computer Gets-->
-                    <button class="mb5 mt5 cta white" id="" onclick="updateDiv();">reset!</button>
                 </div>
+                <!--End of Button for Computer Turn-->
+
+                <!--Display Winner of Game-->
+                <div class="no-show class-to-remove-computer">
+                    <h4 class="white" id="winner-goes-here"></h4>
+                </div>
+                <!--Display Winner of Game-->
 
             </div>
            
-
-            
       </section>
-
-
-      
-      
-  
   </body>
-    <footer class="mv6">
+    <footer class="pv5 darkgreen_bg">
         <script>
-            //Show data choice
-            function lockinChoice(param) {
-                console.log(param);
-            }
-            
-
-
             let userchoice2 = '';
-            let random = Math.floor(Math.random() * 3);
-            let computerButton = document.getElementById('computerButton');
-            let userChoiceWrapper = document.getElementById('wrapperofImage');
-            let writtenchoice = document.getElementById('writtenChoicewrapper');
-            function generateRandom() {
-                if(random === 0) {
-                    userchoice2 = 'paper';
-                    document.getElementById('userchoice2').src = 'images/hand.png';
-                    document.getElementById('writtenChoice').innerHTML = 'paper';
-                    userChoiceWrapper.classList.remove('noShow');
-                    writtenchoice.classList.remove('noShow');
-                    computerButton.classList.add('showNow');
-                } else if(random === 1) {
-                    userchoice2 = 'rock';
-                    document.getElementById('userchoice2').src = 'images/motivation.png';
-                    document.getElementById('writtenChoice').innerHTML = 'rock';
-                    userChoiceWrapper.classList.remove('noShow');
-                    writtenchoice.classList.remove('noShow');
-                    computerButton.classList.add('showNow');
-                } else if(random === 2) {
-                    userchoice2 = 'scissors';
-                    document.getElementById('userchoice2').src = 'images/peace.png';
-                    document.getElementById('writtenChoice').innerHTML = 'scissors';
-                    userChoiceWrapper.classList.remove('noShow');
-                    writtenchoice.classList.remove('noShow');
-                    computerButton.classList.add('showNow');
-                } else {
-                    userchoice2 = 'sorry something is broken...';
-                    document.getElementById('userchoice2').innerHTML = 'sorry something is borken...';
+            //First step
+            function lockinChoice(param) {
+                //Hide clickable Buttons to show User Choice
+                let hideTwo = document.getElementsByClassName('button-for-choice');
+                for(let x = 0; x < hideTwo.length; x++) {
+                    hideTwo[x].classList.add('no-show');
                 }
-            };
+                document.getElementById('pick').src =  `images/${param}.png`;
+                document.getElementById('written-pick').innerHTML =  param;
+
+                userchoice2 = param;
+                //Lets User be able to click on the Button for the Computer
+                let classToRemove = document.getElementsByClassName('class-to-remove');
+                for(let m = 0 ; m < classToRemove.length; m++) {
+                    classToRemove[m].classList.remove('no-show');
+                }
+            }
+     
             let computerChoice = '';
             let computerNumber = Math.floor(Math.random() * 3);
-            let computerChoiceWrapper = document.getElementById('wrapperofComputerImage');
+
             function generateComputerChoice() {
+                let computerClassRemove = document.getElementsByClassName('class-to-remove-computer');
+                for(let n = 0; n < computerClassRemove.length; n++) {
+                    computerClassRemove[n].classList.remove('no-show');
+                }
+                document.getElementById('computerButton').classList.add('no-show');
                 if(computerNumber === 0) {
                     computerChoice = 'paper';
-                    document.getElementById('computerchoice2').src = 'images/hand.png';
-                    computerChoiceWrapper.classList.remove('noShow');
-                    checkWinner(userchoice2, computerChoice);
+                    document.getElementById('written-pick-computer').innerHTML = computerChoice;
+                    document.getElementById('computerchoice2').src = `images/${computerChoice}.png`;
+                    document.getElementById('wrapperofComputerImage').classList.remove('no-show');
                 } else if(computerNumber === 1) {
                     computerChoice = 'rock';
-                    document.getElementById('computerchoice2').src = 'images/motivation.png';
-                    computerChoiceWrapper.classList.remove('noShow');
-                    checkWinner(userchoice2, computerChoice);
+                    document.getElementById('written-pick-computer').innerHTML = computerChoice;
+                    document.getElementById('computerchoice2').src = `images/${computerChoice}.png`;
+                    document.getElementById('wrapperofComputerImage').classList.remove('no-show');
                 } else if(computerNumber === 2) {
                     computerChoice = 'scissors';
-                    document.getElementById('computerchoice2').src = 'images/peace.png';
-                    computerChoiceWrapper.classList.remove('noShow');
-                    checkWinner(userchoice2, computerChoice);
+                    document.getElementById('written-pick-computer').innerHTML = computerChoice;
+                    document.getElementById('computerchoice2').src = `images/${computerChoice}.png`;
+                    document.getElementById('wrapperofComputerImage').classList.remove('no-show');
                 } else {
                     document.getElementById('computerchoice2').innerHTML = 'sorry something is borken...';
                 };
-                console.log('User got: ' +  userchoice2 + ' And computer got: ' + computerChoice);
-            };
-
-            
-
-          function checkWinner(userchoice2, computerChoice) {
-            if(userchoice2 === 'paper' && computerChoice === 'paper') {
-                document.getElementById('writtenChoicewrapper2').innerHTML = 'eh, you tied!';
-              } else if (userchoice2 === 'paper' && computerChoice === 'rock') {
-                document.getElementById('writtenChoicewrapper2').innerHTML = 'congrats, you win!';
-              }  else if (userchoice2 === 'paper' && computerChoice === 'scissors') {
-                document.getElementById('writtenChoicewrapper2').innerHTML = 'sucks, you lose!';
-              } else if (userchoice2 === 'scissors' && computerChoice === 'rock') {
-                document.getElementById('writtenChoicewrapper2').innerHTML = 'sucks, you lose!';
-              } else if (userchoice2 === 'scissors' && computerChoice === 'paper') {
-               document.getElementById('writtenChoicewrapper2').innerHTML = 'congrats, you win!';
-              } else if (userchoice2 === 'scissors' && computerChoice === 'scissors') {
-               document.getElementById('writtenChoicewrapper2').innerHTML = 'eh, you tied!';
-              }  else if (userchoice2 === 'rock' && computerChoice === 'rock') {
-               document.getElementById('writtenChoicewrapper2').innerHTML = 'eh, you tied!';
-              } else if (userchoice2 === 'rock' && computerChoice === 'paper') {
-               document.getElementById('writtenChoicewrapper2').innerHTML = 'sucks, you lose!';
-              } else if (userchoice2 === 'rock' && computerChoice === 'scissors') {
-               document.getElementById('writtenChoicewrapper2').innerHTML = 'congrats, you win';
-              } else {
-                  alert('not sure what, but somethings broken!');
-              };
-          }
 
 
-            function updateDiv() { 
-              
-                    window.location.reload();
+                //Check The Winner
+                let winner = '';
+                if(userchoice2 === 'paper' && computerChoice === 'paper') {
+                    winner = 'no one.';
+                } else if(userchoice2 === 'paper' && computerChoice === 'scissors') {
+                    winner = 'computer';
+                } else if(userchoice2 === 'paper' && computerChoice === 'rock') {
+                    winner = 'YOU!';
+                } else if(userchoice2 === 'rock' && computerChoice === 'rock') {
+                    winner = 'no one.';
+                } else if(userchoice2 === 'rock' && computerChoice === 'paper') {
+                    winner = 'computer';
+                } else if(userchoice2 === 'rock' && computerChoice === 'scissors') {
+                    winner = 'YOU!';
+                } else if(userchoice2 === 'scissors' && computerChoice === 'rock') {
+                    winner = 'computer';
+                } else if(userchoice2 === 'scissors' && computerChoice === 'paper') {
+                    winner = 'YOU!';
+                } else if(userchoice2 === 'scissors' && computerChoice === 'scissors') {
+                    winner = 'no one.';
+                } else {
+                    winner = '.... wait up, something is broken.. Sorry!';
                 }
 
-          
+                setTimeout(function() {
+                    document.getElementById('winner-goes-here').innerHTML = `And the winner is..... ${winner}`;
+                }, 2000);
+
+
+                setTimeout(function() {
+                    document.getElementById('thank-you-message').innerHTML = `Well, thanks for playing!`;
+                }, 6000);
+
+                localStorage.setItem('winner of game', winner);
+
+
+
+            };
+
 
       </script>
   </footer>
