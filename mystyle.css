@@ -1,5 +1,8 @@
 body {
     width:100%;
+    overflow-x:hidden;
+    position:Relative;
+    width:100%;
 }
 h1, h2, h3, h4, h5, h6 {
     font-family:'Mocky Pop One', sans-serif;
@@ -16,18 +19,84 @@ span:hover {
 }
 p, a, li, ul {
     font-family:'Raleway', sans-serif;
+    font-size: 14px;
+    line-height: 24px;
 }
+
+nav {
+    position:fixed;
+    top:200px;
+}
+.nav-line {
+    width:2px;
+    height:20px;
+    border-radius:5px;
+    background:#8DE0F4;
+}
+ul li {
+    list-style:none;
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+}
+
+
+
+.pink-cta {
+    background:#e7b4cf;
+    color:white;
+    padding: 10px 50px;
+    border:0;
+    border-radius:20px;
+    font-size:10px;
+    font-weight:bold;
+    letter-spacing:2px;
+    text-transform:uppercase;
+    font-family:'Raleway', sans-serif;
+    box-shadow: 0px 3px 10px #00000026;
+}
+/*Start of Colors*/
+.light_blue_c {
+    color:#91E7FC;
+}
+.light_blue_bg {
+    background:#91E7FC;
+}
+.blue_c {
+    color:#8DE0F4;
+}
+.blue_bg {
+    background:#8DE0F4;
+}
+.pink {
+    color:#e7b4cf;
+}
+.pink_bg {
+    background:#e7b4cf;
+}
+
+/*START OF HERO*/
+.illustration-image {
+    width:400px;
+    z-index:1;
+}
+.dark-blue-bg {
+    position:absolute;
+    top:-510px;
+    right:-320px;
+}
+.light-blue-bg {
+    position:absolute;
+    z-index:-1;
+    top:-100px;
+    right:-476px;
+}
+
 .purple {
     color:#805D93;
 }
 .purple_bg {
     background:#805D93;   
-}
-.pink {
-    color:#F49FBC;
-}
-.pink_bg {
-    background:#F49FBC;
 }
 .grey {
     color:#2B2F23;
@@ -47,79 +116,14 @@ p, a, li, ul {
 .darkgreen_bg {
     background:#169873;
 }
-
-
-.computerButton {
-    visibility:hidden;
+.mobile-only {
+    display:none;
 }
-
-.invert {
-    filter:invert(1);
-}
-.hand-wrapper {
-    padding: 20px;
-    background: #169873;
-    border-radius: 50%;
-    height: 150px;
-    width: 150px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    border: 5px solid white;
-}
-.hand-wrapper-green {
-    padding: 20px;
-    background: #9EBD6E;
-    border-radius: 50%;
-    height: 150px;
-    width: 150px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    border: 5px solid white;
-}
-.hand-wrapper-orange {
-    padding: 20px;
-    background: #165a31;
-    border-radius: 50%;
-    height: 150px;
-    width: 150px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    border: 5px solid white;
-}
-.hand-wrapper-pink {
-    padding: 20px;
-    background: #F49FBC;
-    border-radius: 50%;
-    height: 150px;
-    width: 150px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    border: 5px solid white;
-}
-
-.cta {
-    bordeR: 0;
-    background: #bb5f00;
-    padding: 10px 15px;
-    border-radius: 5px;
-    font-size:14px;
-    text-transform:uppercase;
-    font-family:'Mocky Pop One', sans-serif;
-    font-weight:bold;
-    color:#ffff;
-    margin:0;
-}
-.cta:hover {
-    cursor:pointer;
-}
-.noShow {
-    visibility:hidden;
-}
-
-.showNow {
-    visibility:visible;
+@media only screen and (max-width:960px) {
+    .mobile-only {
+        display:block;
+    }
+    .desktop-only {
+        display:none;
+    }
 }

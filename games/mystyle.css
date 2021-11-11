@@ -7,6 +7,11 @@ h1, h2, h3, h4, h5, h6 {
 p, ul, li, em, span, a {
     font-family:'Raleway', sans-serif;
 }
+p, a, li, ul {
+    font-family:'Raleway', sans-serif;
+    font-size: 14px;
+    line-height: 24px;
+}
 a {
     color:inherit;
     font-weight:Bold;
@@ -149,4 +154,48 @@ a {
     width: 3px;
     background: white;
     border-radius: 10px;
+}
+
+.mobile-only {
+    display:none;
+}
+@media only screen and (max-width:960px) {
+    .mobile-only {
+        display:block;
+    }
+    .desktop-only {
+        display:none;
+    }
+}
+.pink-cta {
+    background:#e7b4cf;
+    color:white;
+    padding: 10px 50px;
+    border:0;
+    border-radius:20px;
+    font-size:10px;
+    font-weight:bold;
+    letter-spacing:2px;
+    text-transform:uppercase;
+    font-family:'Raleway', sans-serif;
+    box-shadow: 0px 3px 10px #00000026;
+}
+/*Start of Colors*/
+.light_blue_c {
+    color:#91E7FC;
+}
+.light_blue_bg {
+    background:#91E7FC;
+}
+.blue_c {
+    color:#8DE0F4;
+}
+.blue_bg {
+    background:#8DE0F4;
+}
+.pink {
+    color:#e7b4cf;
+}
+.pink_bg {
+    background:#e7b4cf;
 }

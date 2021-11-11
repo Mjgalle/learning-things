@@ -11,14 +11,14 @@
   </head>
 
 
-  <body>  
-      <section class="w-100 green_bg pv6">
-          <div class=" w-60 mr-auto ml-auto flex flex-column items-center justify-center tc">
-            <h2 class="grey testingThis">You made it to the arcade!</h2>
+  <body id="body-section">  
+      <section class="w-100 pv6">
+          <div class=" w-60 mr-auto ml-auto flex flex-column">
+            <h2 class="light_blue_c">You made it to the arcade!</h2>
             <p class="grey testingThis">Congrats on making it here! Since I need to work on my JS skills, why not code out some games we're all familiar with!</p>
             <p class="grey">Please pick a game you'd like to play:</p>
-            <div>
-                <a href="#rockpaperscissors">Rock Paper Scissors</a>
+            <div class="mt4">
+                <a class="pink-cta ttu no-underline" href="#rockpaperscissors">Rock Paper Scissors</a>
             </div>
           </div>
       </section>
@@ -85,6 +85,12 @@
                 </div>
                 <!--Display Winner of Game-->
 
+                 <!--Display Winner of Game-->
+                 <div class="no-show class-to-remove-computer">
+                    <h4 class="white" id="thank-you-message"></h4>
+                </div>
+                <!--Display Winner of Game-->
+
             </div>
            
       </section>
@@ -124,6 +130,7 @@
                     document.getElementById('written-pick-computer').innerHTML = computerChoice;
                     document.getElementById('computerchoice2').src = `images/${computerChoice}.png`;
                     document.getElementById('wrapperofComputerImage').classList.remove('no-show');
+              
                 } else if(computerNumber === 1) {
                     computerChoice = 'rock';
                     document.getElementById('written-pick-computer').innerHTML = computerChoice;
@@ -170,13 +177,22 @@
 
                 setTimeout(function() {
                     document.getElementById('thank-you-message').innerHTML = `Well, thanks for playing!`;
-                }, 6000);
+                }, 3000);
 
-                localStorage.setItem('winner of game', winner);
+                var outcomeOfGame = winner;
+                localStorage.setItem("winner of game:", JSON.stringify(outcomeOfGame));
+
+                var storedOutcomeOfGame = JSON.parse(localStorage.getItem("winner of game:"));
+
+
+
 
 
 
             };
+
+
+
 
 
       </script>
